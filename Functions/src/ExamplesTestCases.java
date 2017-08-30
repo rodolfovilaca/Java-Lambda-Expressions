@@ -22,6 +22,25 @@ public class ExamplesTestCases {
 											.apply(numsSorter)
 											.toArray(new Integer[expectedSorter.length]);
 		assertArrayEquals(resultSorter, expectedSorter);
+		
+		List<Integer> numsLowerValue = Arrays.asList(3,2,1);
+		Integer expecteLowerValue = 1;
+		Integer resultLowerValue = Examples.getLowerValue
+											.apply(numsLowerValue);
+		assertEquals(resultLowerValue, expecteLowerValue);
+		
+		List<Integer> numsLowerValueStream = Arrays.asList(1,2,3);
+		Integer expecteLowerValueStream = 1;
+		Integer resultLowerValueStream = Examples.getLowerValueStream
+											.apply(numsLowerValueStream);
+		assertEquals(resultLowerValueStream, expecteLowerValueStream);
+		
+		List<Integer> numsAverage = Arrays.asList(1,2,3);
+		Integer expectedAverage = 2;
+		Integer resultAverage = Examples.getAverage
+											.apply(numsAverage);
+		assertEquals(resultAverage, expectedAverage);
+		
+		
 	}
-
 }

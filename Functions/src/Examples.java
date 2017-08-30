@@ -1,3 +1,4 @@
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.function.Function;
 
@@ -18,4 +19,25 @@ public class Examples {
 			});
 		return list;
 	};
+	
+	public static Function<List<Integer>,Integer> getLowerValue = (list) -> {
+		int low = list.get(0);
+		for(Integer num : list){
+			if(num.intValue()<low){
+				low = num.intValue();
+			}
+		}
+		return low;
+	};
+	
+	public static Function<List<Integer>,Integer> getLowerValueStream = (list) -> {
+		IntSummaryStatistics stats = list.stream().mapToInt(num -> num).summaryStatistics();
+		return stats.getMin();
+	};
+	
+	public static Function<List<Integer>,Integer> getAverage = (list) -> {
+		IntSummaryStatistics stats = list.stream().mapToInt(num -> num).summaryStatistics();
+		return ((int)(stats.getSum())/list.size());
+	};
+	
 }
