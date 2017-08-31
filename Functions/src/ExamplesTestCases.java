@@ -41,6 +41,24 @@ public class ExamplesTestCases {
 											.apply(numsAverage);
 		assertEquals(resultAverage, expectedAverage);
 		
+	}
+	
+	@Test
+	public void searchRangeTests(){
 		
+		Integer[] arrGroundZero  = {};
+		Integer[] expectedGroundZero = {-1,-1};
+		Integer[] resultGroundZero = Examples.searchRange.apply(arrGroundZero,0);
+		assertArrayEquals(resultGroundZero, expectedGroundZero);
+		
+		Integer[] arrOnlyTheNums  = {2,2};
+		Integer[] expectedOnlyTheNums = {0,1};
+		Integer[] resultOnlyTheNums = Examples.searchRange.apply(arrOnlyTheNums,2);
+		assertArrayEquals(resultOnlyTheNums, expectedOnlyTheNums);
+		
+		Integer[] arr  = {0,2,4,4,4,5,6};
+		Integer[] expected = {2,4};
+		Integer[] result = Examples.searchRange.apply(arr,4);
+		assertArrayEquals(result, expected);
 	}
 }
