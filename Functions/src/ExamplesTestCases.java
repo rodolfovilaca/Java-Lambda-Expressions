@@ -62,6 +62,11 @@ public class ExamplesTestCases {
 													.toArray(new String[expectedMaxLength4.length]);
 		assertArrayEquals(expectedFilterAndUpper, actualFilterAndUpper);
 		
+		char[] expectedStringToArray = {'t','e','s','t'};
+		char[] actualStringToArray = Examples.stringToCharArray
+													.apply("test");
+		assertArrayEquals(expectedStringToArray, actualStringToArray);
+		
 	}
 	
 	@Test

@@ -98,4 +98,13 @@ public class Examples {
     	list.forEach(System.out::println);
     	return result;
     };
+    
+ // turn a string to a sequence of characters
+    public static Function<String,char[]> stringToCharArray = string -> {
+    	char[] result = new char[string.length()];
+    	for(int i=0;i<result.length;i++){
+    		result[i] = string.charAt(i);
+    	}
+    	return result;
+    };
 }
