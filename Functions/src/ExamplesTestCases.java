@@ -48,6 +48,20 @@ public class ExamplesTestCases {
 													.toArray(new String[stringsToUpper.size()]);
 		assertArrayEquals(expectedToUpper, actualToUpper);
 		
+		List<String> stringsMaxLength4 = Arrays.asList("bacon","eggs","milk","tea","coffe","egg");
+		String[] expectedMaxLength4 = {"tea","egg"};
+		String[] actualMaxLength4 = Examples.filterMaxLength4
+													.apply(stringsMaxLength4)
+													.toArray(new String[expectedMaxLength4.length]);
+		assertArrayEquals(expectedMaxLength4, actualMaxLength4);
+		
+		List<String> stringsFilterAndUpper = Arrays.asList("bacon","eggs","milk","tea","coffe","egg");
+		String[] expectedFilterAndUpper = {"tea","egg"};
+		String[] actualFilterAndUpper = Examples.filterShortAndTurnToUppercase
+													.apply(stringsFilterAndUpper)
+													.toArray(new String[expectedMaxLength4.length]);
+		assertArrayEquals(expectedFilterAndUpper, actualFilterAndUpper);
+		
 	}
 	
 	@Test

@@ -2,6 +2,7 @@ import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Examples {
 
@@ -76,4 +77,25 @@ public class Examples {
 		list.replaceAll(string -> string.toUpperCase());
 		return list;
 	};
+	
+	 // filter names that are less than four characters long
+    public static Function<List<String>,List<String>> filterMaxLength4 = (list) -> {
+    	return list.stream()
+    			.filter(string -> string.length()<4)
+    			.collect(Collectors.toList());
+    };
+    
+    // filter names that are less than four characters long
+    // and turn remaining names to uppercase
+    public static Function<List<String>,List<String>> filterShortAndTurnToUppercase = (list) ->{
+    	List<String> result = list.stream()
+    			.filter(string -> string.length()<4)
+    			.collect(Collectors.toList());
+    	list = list.stream()
+    			.filter(string -> string.length()>3)
+    			.map(string -> string.toUpperCase())
+    			.collect(Collectors.toList());
+    	list.forEach(System.out::println);
+    	return result;
+    };
 }
