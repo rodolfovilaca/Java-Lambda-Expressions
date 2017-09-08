@@ -41,6 +41,13 @@ public class ExamplesTestCases {
 											.apply(numsAverage);
 		assertEquals(resultAverage, expectedAverage);
 		
+		List<String> stringsToUpper = Arrays.asList("bacon","eggs","milk");
+		String[] expectedToUpper = {"BACON","EGGS","MILK"};
+		String[] actualToUpper = Examples.listToUpper
+													.apply(stringsToUpper)
+													.toArray(new String[stringsToUpper.size()]);
+		assertArrayEquals(expectedToUpper, actualToUpper);
+		
 	}
 	
 	@Test

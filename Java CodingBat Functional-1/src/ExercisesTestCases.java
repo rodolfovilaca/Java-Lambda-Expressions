@@ -101,6 +101,7 @@ public class ExercisesTestCases {
 		String[] resultNoX = Exercises.noX(stringsNoX).toArray(new String[stringsNoX.size()]);
 		String[] expectedNoX = { "a", "bb", "c" };
 		assertArrayEquals(resultNoX, expectedNoX);
+		
 	}
 
 	@Test

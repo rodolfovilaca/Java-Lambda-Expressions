@@ -101,6 +101,7 @@ public class ExercisesTestCases {
 		Integer[] expectedSquare56 = { 19, 11 };
 		Integer[] resultSquare56 = Exercises.square56(numsSquare56).toArray(new Integer[expectedSquare56.length]);
 		assertArrayEquals(resultSquare56, expectedSquare56);
+		
 	}
 
 	@Test

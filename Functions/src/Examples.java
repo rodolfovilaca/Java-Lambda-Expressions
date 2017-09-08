@@ -70,5 +70,10 @@ public class Examples {
 		}
 		return result;
 	};
-
+	
+	// convert a sequence of strings to list of upper case strings
+	public static Function<List<String>,List<String>> listToUpper = (list) ->{
+		list.replaceAll(string -> string.toUpperCase());
+		return list;
+	};
 }
