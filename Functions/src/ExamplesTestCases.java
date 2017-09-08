@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -66,6 +67,9 @@ public class ExamplesTestCases {
 		char[] actualStringToArray = Examples.stringToCharArray
 													.apply("test");
 		assertArrayEquals(expectedStringToArray, actualStringToArray);
+		
+		List<String> ListToCharcater = Arrays.asList("bacon","eggs","milk","tea","coffe","egg");
+		Examples.toCharacterLists.apply(ListToCharcater);
 		
 	}
 	
