@@ -138,4 +138,24 @@ public class Examples {
     	}
         return result;
     };
+    
+    // Take sums of given sequences and return those with sum greater than 20
+    public static Function<List<List<Integer>>,List<List<Integer>>> sumOfLists20 = list -> {
+    	List<List<Integer>> result = new ArrayList<>();
+    	list.forEach(currentList -> {
+    		int sum = 0;
+    		for(Integer num : currentList){
+    			sum+=num;
+    			if(sum>20){
+    				result.add(currentList);
+    				break;
+    			}
+    		}
+    	});
+    	result.forEach(resultCurrentList ->{
+    		resultCurrentList.forEach(System.out::print);
+    		System.out.println();
+    	});
+        return result;
+    };
 }

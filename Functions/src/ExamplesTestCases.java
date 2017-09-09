@@ -1,6 +1,7 @@
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -76,6 +77,17 @@ public class ExamplesTestCases {
 		String actualLongestNameInList = Examples.longestNameInList
 													.apply(stringsLongestNameInList);
 		assertEquals(expectedLongestNameInList, actualLongestNameInList);
+		
+		List<List<Integer>> listOfListInteger = new ArrayList<>();
+		List<Integer> list01 = Arrays.asList(2,3,5,10,15);
+		List<Integer> list02 = Arrays.asList(2,3,4,4,5);
+		List<Integer> list03 = Arrays.asList(1,2,0,0,5);
+		List<Integer> list04 = Arrays.asList(2,3,5,40,15);
+		listOfListInteger.add(list01);
+		listOfListInteger.add(list02);
+		listOfListInteger.add(list03);
+		listOfListInteger.add(list04);
+		Examples.sumOfLists20.apply(listOfListInteger);
 		
 	}
 	
