@@ -122,4 +122,20 @@ public class Examples {
 		});
 		return result;
 	};
+	
+	// find the longest string in given sequence of strings as Option (None if empty)
+    // and reverse the result before returning it
+    public static Function<List<String>,String> longestNameInList = list -> {
+    	String maxLength = "";
+    	String result = "";
+    	for(String string : list){
+    		if(string.length()>maxLength.length()){
+    			maxLength = string;
+    		}
+    	}
+    	for(int i = maxLength.length()-1;i>=0;i--){
+    		result+=maxLength.charAt(i);
+    	}
+        return result;
+    };
 }

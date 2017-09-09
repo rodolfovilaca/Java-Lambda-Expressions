@@ -1,6 +1,6 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -70,6 +70,12 @@ public class ExamplesTestCases {
 		
 		List<String> ListToCharcater = Arrays.asList("bacon","eggs","milk","tea","coffe","egg");
 		Examples.toCharacterLists.apply(ListToCharcater);
+		
+		List<String> stringsLongestNameInList = Arrays.asList("bacon","eggs","milk","tea","coffe","egg");
+		String expectedLongestNameInList = "nocab";
+		String actualLongestNameInList = Examples.longestNameInList
+													.apply(stringsLongestNameInList);
+		assertEquals(expectedLongestNameInList, actualLongestNameInList);
 		
 	}
 	
