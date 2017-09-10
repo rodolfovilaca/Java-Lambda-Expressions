@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -158,4 +159,45 @@ public class Examples {
     	});
         return result;
     };
+    
+    // Return only cards of suit "heart"
+    // onlyHearts([("diamond", 4), ("heart", 9), ("clubs", 10)]) ==  [("heart", 9)]
+    public static Function<Map<String,List<Integer>>,Map<String,List<Integer>>> onlyHearts = map -> {
+    	map.keySet().forEach(key -> {
+	    		if(!key.equals("heart")){
+	    			map.remove(key);
+    			}
+    		});
+        return map;
+    };
+    
+ // returns a function that increments a given argument with a predefined amount
+    // TIP: you can return a lambda function!
+    public static Function<Integer, Integer> plus = num -> {
+    	int amount = 10;
+    	return num+amount;
+    };
+    
+
+    // returns a function that subtracts a given argument with a predefined amount
+    public static Function<Integer, Integer> minus = num -> {
+    	int amount = 10;
+    	return num+amount;
+    };
+    
+    // calls 'action' function with the given x argument and returns the result
+    // TIP: Have a look at java.util.Function interface
+    Function<Integer, Integer> action = num -> {
+    	return num-2;
+    };
+    public static Integer doIt(Integer x, Function<Integer, Integer> action) {
+    	return action.apply(x);
+    }
+    
+    /** combines two functions that both take integer arguments by passing the result from
+     * the first function as the argument to the second function, and returns its return value
+     */
+    public static Integer combineInt(Function<Integer, Integer> first, Function<Integer, Integer> second) {
+        return second.compose(first).apply(4);
+    }
 }
